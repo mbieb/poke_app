@@ -1,0 +1,12 @@
+{
+    "alertWarning": "Warning",
+    "alertNoConnection": "No connection, please check your internet",
+    "alertFailed": "Failed",
+    "alertTimeOut": "Request time out",
+    "about": "About",
+    "baseStats":"Base Stats",
+    "evolution": "Evolution",
+    "moves": "Moves",
+    "pokemon": "Pokemon",
+    "pokedex": "Pokedex"
+}
