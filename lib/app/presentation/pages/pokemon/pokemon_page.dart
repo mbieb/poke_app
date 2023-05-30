@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:poke_app/app/application/bloc/pokemon_bloc.dart';
 import 'package:poke_app/app/domain/pokemon/pokemon.dart';
@@ -40,6 +41,20 @@ class PokemonPage extends StatelessWidget {
 class _PokemonBodyPage extends StatelessWidget {
   const _PokemonBodyPage();
 
+  Future<bool> _onWillPopScope(BuildContext context, I10n i10n) async {
+    Alert.option(
+      context: context,
+      title: i10n.alertConfirm,
+      body: i10n.alertQuit,
+      positiveText: i10n.yes,
+      cancelTextColor: Colors.black,
+      positiveAction: () {
+        SystemNavigator.pop();
+      },
+    );
+    return true;
+  }
+
   @override
   Widget build(BuildContext context) {
     I10n i10n = I10n.of(context);
@@ -59,17 +74,7 @@ class _PokemonBodyPage extends StatelessWidget {
       },
       builder: (context, state) {
         return WillPopScope(
-          onWillPop: () {
-            return Alert.option(
-              context: context,
-              title: i10n.alertConfirm,
-              body: i10n.alertQuit,
-              positiveText: i10n.yes,
-              positiveAction: () {
-                context.pop();
-              },
-            );
-          },
+          onWillPop: () async => _onWillPopScope(context, i10n),
           child: Scaffold(
             appBar: AppBar(
                 title: Text(

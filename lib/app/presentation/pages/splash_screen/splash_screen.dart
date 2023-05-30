@@ -19,7 +19,11 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     Timer(const Duration(seconds: 3), () {
-      context.go(AppRouter.pokemonPage);
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) {
+          context.go(AppRouter.pokemonPage);
+        }
+      });
     });
   }
 
