@@ -14,7 +14,7 @@ class TypeWidget extends StatelessWidget {
           borderRadius: const BorderRadius.all(Radius.circular(18)),
           color: Colors.white.withOpacity(0.3)),
       child: Padding(
-        padding: padding(horizontal: 18, vertical: 4),
+        padding: padding(horizontal: 12, vertical: 4),
         child: Text(
           text.capitalize(),
           style: cTextPrimaryRegXS,

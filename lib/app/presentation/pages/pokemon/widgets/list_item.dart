@@ -82,6 +82,48 @@ class _ListItem extends StatelessWidget {
                             ),
                           ),
                           Positioned(
+                            top: 30,
+                            left: 15,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  pokemon.name?.capitalize() ?? "",
+                                  style: cTextPrimaryBold,
+                                ),
+                                gapH8,
+                                SizedBox(
+                                  width: 68,
+                                  child: ListView.builder(
+                                      shrinkWrap: true,
+                                      physics:
+                                          const NeverScrollableScrollPhysics(),
+                                      itemCount: pokemon.types?.length,
+                                      itemBuilder: (context, index) {
+                                        var types = pokemon.types?[index];
+                                        return Container(
+                                          margin: margin(bottom: 8),
+                                          child: TypeWidget(types ?? ""),
+                                        );
+                                      }),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            top: 10,
+                            right: 10,
+                            child: Opacity(
+                              opacity: 0.5,
+                              child: Text(
+                                customNumberFormat(index + 1),
+                                style: cTextAccentBold,
+                              ),
+                            ),
+                          ),
+                          Positioned(
                             bottom: 6,
                             right: -4,
                             child: CachedNetworkImage(
@@ -96,46 +138,6 @@ class _ListItem extends StatelessWidget {
                                     errorWidget: (context, url, error) =>
                                         Container());
                               },
-                            ),
-                          ),
-                          Positioned(
-                              top: 30,
-                              left: 15,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    pokemon.name?.capitalize() ?? "",
-                                    style: cTextPrimaryBold,
-                                  ),
-                                  gapH8,
-                                  SizedBox(
-                                    width: 82,
-                                    child: ListView.builder(
-                                        shrinkWrap: true,
-                                        physics:
-                                            const NeverScrollableScrollPhysics(),
-                                        itemCount: pokemon.types?.length,
-                                        itemBuilder: (context, index) {
-                                          var types = pokemon.types?[index];
-                                          return Container(
-                                            margin: margin(bottom: 8),
-                                            child: TypeWidget(types ?? ""),
-                                          );
-                                        }),
-                                  ),
-                                ],
-                              )),
-                          Positioned(
-                            top: 10,
-                            right: 10,
-                            child: Opacity(
-                              opacity: 0.5,
-                              child: Text(
-                                customNumberFormat(index + 1),
-                                style: cTextAccentBold,
-                              ),
                             ),
                           ),
                         ],
