@@ -1,16 +1,16 @@
 # poke_app
 
-A new Flutter project.
+Pokemon App using Flutter.
 
-## Getting Started
+Poke Api : https://pokeapi.co/
 
-This project is a starting point for a Flutter application.
+widgets & libraries:
+* flutter BLoC
+* dio
+* dartz
+* get_it
+* injectable
+* freezed
+* go_router
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="ss1.png" width="200">  <img src="ss2.png" width="200">  <img src="ss3.png" width="200">  <img src="ss4.png" width="200">  <img src="ss5.png" width="200">
