@@ -4,7 +4,7 @@ Pokemon App using Flutter.
 
 Poke Api : https://pokeapi.co/
 
-widgets & libraries:
+package & libraries:
 * flutter BLoC
 * dio
 * dartz
