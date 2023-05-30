@@ -25,6 +25,9 @@ _$_PokemonDto _$$_PokemonDtoFromJson(Map<String, dynamic> json) =>
       abilities: (json['abilities'] as List<dynamic>?)
           ?.map((e) => AbilitiesDto.fromJson(e as Map<String, dynamic>))
           .toList(),
+      moves: (json['moves'] as List<dynamic>?)
+          ?.map((e) => MovesDto.fromJson(e as Map<String, dynamic>))
+          .toList(),
       height: (json['height'] as num?)?.toDouble(),
       weight: (json['weight'] as num?)?.toDouble(),
     );
@@ -38,6 +41,7 @@ Map<String, dynamic> _$$_PokemonDtoToJson(_$_PokemonDto instance) =>
       'stats': instance.stats,
       'types': instance.types,
       'abilities': instance.abilities,
+      'moves': instance.moves,
       'height': instance.height,
       'weight': instance.weight,
     };

@@ -15,10 +15,15 @@ class Pokemon with _$Pokemon {
     List<String>? types,
     List<Stats>? stats,
     List<String>? abilities,
+    List<String>? moves,
     String? species,
   }) = _Pokemon;
 
   String get abilitiesToStringValue {
     return abilities?.map((element) => element.capitalize()).join(', ') ?? '';
+  }
+
+  String get movesToStringValue {
+    return moves?.map((element) => element.capitalize()).join(', ') ?? '';
   }
 }

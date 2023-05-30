@@ -28,6 +28,7 @@ mixin _$PokemonDto {
   List<StatsDto>? get stats => throw _privateConstructorUsedError;
   List<TypesDto>? get types => throw _privateConstructorUsedError;
   List<AbilitiesDto>? get abilities => throw _privateConstructorUsedError;
+  List<MovesDto>? get moves => throw _privateConstructorUsedError;
   double? get height => throw _privateConstructorUsedError;
   double? get weight => throw _privateConstructorUsedError;
 
@@ -51,6 +52,7 @@ abstract class $PokemonDtoCopyWith<$Res> {
       List<StatsDto>? stats,
       List<TypesDto>? types,
       List<AbilitiesDto>? abilities,
+      List<MovesDto>? moves,
       double? height,
       double? weight});
 
@@ -78,6 +80,7 @@ class _$PokemonDtoCopyWithImpl<$Res, $Val extends PokemonDto>
     Object? stats = freezed,
     Object? types = freezed,
     Object? abilities = freezed,
+    Object? moves = freezed,
     Object? height = freezed,
     Object? weight = freezed,
   }) {
@@ -110,6 +113,10 @@ class _$PokemonDtoCopyWithImpl<$Res, $Val extends PokemonDto>
           ? _value.abilities
           : abilities // ignore: cast_nullable_to_non_nullable
               as List<AbilitiesDto>?,
+      moves: freezed == moves
+          ? _value.moves
+          : moves // ignore: cast_nullable_to_non_nullable
+              as List<MovesDto>?,
       height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
@@ -162,6 +169,7 @@ abstract class _$$_PokemonDtoCopyWith<$Res>
       List<StatsDto>? stats,
       List<TypesDto>? types,
       List<AbilitiesDto>? abilities,
+      List<MovesDto>? moves,
       double? height,
       double? weight});
 
@@ -189,6 +197,7 @@ class __$$_PokemonDtoCopyWithImpl<$Res>
     Object? stats = freezed,
     Object? types = freezed,
     Object? abilities = freezed,
+    Object? moves = freezed,
     Object? height = freezed,
     Object? weight = freezed,
   }) {
@@ -221,6 +230,10 @@ class __$$_PokemonDtoCopyWithImpl<$Res>
           ? _value._abilities
           : abilities // ignore: cast_nullable_to_non_nullable
               as List<AbilitiesDto>?,
+      moves: freezed == moves
+          ? _value._moves
+          : moves // ignore: cast_nullable_to_non_nullable
+              as List<MovesDto>?,
       height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
@@ -244,11 +257,13 @@ class _$_PokemonDto extends _PokemonDto {
       final List<StatsDto>? stats,
       final List<TypesDto>? types,
       final List<AbilitiesDto>? abilities,
+      final List<MovesDto>? moves,
       this.height,
       this.weight})
       : _stats = stats,
         _types = types,
         _abilities = abilities,
+        _moves = moves,
         super._();
 
   factory _$_PokemonDto.fromJson(Map<String, dynamic> json) =>
@@ -293,6 +308,16 @@ class _$_PokemonDto extends _PokemonDto {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<MovesDto>? _moves;
+  @override
+  List<MovesDto>? get moves {
+    final value = _moves;
+    if (value == null) return null;
+    if (_moves is EqualUnmodifiableListView) return _moves;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final double? height;
   @override
@@ -300,7 +325,7 @@ class _$_PokemonDto extends _PokemonDto {
 
   @override
   String toString() {
-    return 'PokemonDto(name: $name, frontDefault: $frontDefault, sprites: $sprites, species: $species, stats: $stats, types: $types, abilities: $abilities, height: $height, weight: $weight)';
+    return 'PokemonDto(name: $name, frontDefault: $frontDefault, sprites: $sprites, species: $species, stats: $stats, types: $types, abilities: $abilities, moves: $moves, height: $height, weight: $weight)';
   }
 
   @override
@@ -317,6 +342,7 @@ class _$_PokemonDto extends _PokemonDto {
             const DeepCollectionEquality().equals(other._types, _types) &&
             const DeepCollectionEquality()
                 .equals(other._abilities, _abilities) &&
+            const DeepCollectionEquality().equals(other._moves, _moves) &&
             (identical(other.height, height) || other.height == height) &&
             (identical(other.weight, weight) || other.weight == weight));
   }
@@ -332,6 +358,7 @@ class _$_PokemonDto extends _PokemonDto {
       const DeepCollectionEquality().hash(_stats),
       const DeepCollectionEquality().hash(_types),
       const DeepCollectionEquality().hash(_abilities),
+      const DeepCollectionEquality().hash(_moves),
       height,
       weight);
 
@@ -358,6 +385,7 @@ abstract class _PokemonDto extends PokemonDto {
       final List<StatsDto>? stats,
       final List<TypesDto>? types,
       final List<AbilitiesDto>? abilities,
+      final List<MovesDto>? moves,
       final double? height,
       final double? weight}) = _$_PokemonDto;
   const _PokemonDto._() : super._();
@@ -380,6 +408,8 @@ abstract class _PokemonDto extends PokemonDto {
   List<TypesDto>? get types;
   @override
   List<AbilitiesDto>? get abilities;
+  @override
+  List<MovesDto>? get moves;
   @override
   double? get height;
   @override

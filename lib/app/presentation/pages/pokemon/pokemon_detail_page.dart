@@ -34,7 +34,7 @@ class PokemonDetailPage extends StatelessWidget {
       body: Stack(
         children: [
           Positioned(
-            top: 30,
+            top: 40,
             left: 5,
             child: IconButton(
               icon: const Icon(
@@ -47,7 +47,7 @@ class PokemonDetailPage extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 70,
+            top: 80,
             left: 20,
             right: 20,
             child: Row(
@@ -67,7 +67,7 @@ class PokemonDetailPage extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 120,
+            top: 130,
             left: 22,
             child: SizedBox(
               height: 24,

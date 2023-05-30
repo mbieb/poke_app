@@ -13,21 +13,9 @@ class _EvolutionTab extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _TabContent(
-            title: i10n.species,
-            content: Text(item?.species?.capitalize() ?? ''),
+            title: i10n.evolution,
+            content: const Text(''),
           ),
-          _TabContent(
-            title: i10n.height,
-            content: Text('${item?.height}'),
-          ),
-          _TabContent(
-            title: i10n.weight,
-            content: Text('${item?.weight}'),
-          ),
-          _TabContent(
-            title: i10n.ability,
-            content: Text('asdz'),
-          )
         ],
       ),
     );

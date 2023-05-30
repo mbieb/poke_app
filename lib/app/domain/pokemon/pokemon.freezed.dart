@@ -24,6 +24,7 @@ mixin _$Pokemon {
   List<String>? get types => throw _privateConstructorUsedError;
   List<Stats>? get stats => throw _privateConstructorUsedError;
   List<String>? get abilities => throw _privateConstructorUsedError;
+  List<String>? get moves => throw _privateConstructorUsedError;
   String? get species => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -44,6 +45,7 @@ abstract class $PokemonCopyWith<$Res> {
       List<String>? types,
       List<Stats>? stats,
       List<String>? abilities,
+      List<String>? moves,
       String? species});
 }
 
@@ -68,6 +70,7 @@ class _$PokemonCopyWithImpl<$Res, $Val extends Pokemon>
     Object? types = freezed,
     Object? stats = freezed,
     Object? abilities = freezed,
+    Object? moves = freezed,
     Object? species = freezed,
   }) {
     return _then(_value.copyWith(
@@ -103,6 +106,10 @@ class _$PokemonCopyWithImpl<$Res, $Val extends Pokemon>
           ? _value.abilities
           : abilities // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      moves: freezed == moves
+          ? _value.moves
+          : moves // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       species: freezed == species
           ? _value.species
           : species // ignore: cast_nullable_to_non_nullable
@@ -127,6 +134,7 @@ abstract class _$$_PokemonCopyWith<$Res> implements $PokemonCopyWith<$Res> {
       List<String>? types,
       List<Stats>? stats,
       List<String>? abilities,
+      List<String>? moves,
       String? species});
 }
 
@@ -148,6 +156,7 @@ class __$$_PokemonCopyWithImpl<$Res>
     Object? types = freezed,
     Object? stats = freezed,
     Object? abilities = freezed,
+    Object? moves = freezed,
     Object? species = freezed,
   }) {
     return _then(_$_Pokemon(
@@ -183,6 +192,10 @@ class __$$_PokemonCopyWithImpl<$Res>
           ? _value._abilities
           : abilities // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      moves: freezed == moves
+          ? _value._moves
+          : moves // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       species: freezed == species
           ? _value.species
           : species // ignore: cast_nullable_to_non_nullable
@@ -203,10 +216,12 @@ class _$_Pokemon extends _Pokemon {
       final List<String>? types,
       final List<Stats>? stats,
       final List<String>? abilities,
+      final List<String>? moves,
       this.species})
       : _types = types,
         _stats = stats,
         _abilities = abilities,
+        _moves = moves,
         super._();
 
   @override
@@ -249,12 +264,22 @@ class _$_Pokemon extends _Pokemon {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<String>? _moves;
+  @override
+  List<String>? get moves {
+    final value = _moves;
+    if (value == null) return null;
+    if (_moves is EqualUnmodifiableListView) return _moves;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final String? species;
 
   @override
   String toString() {
-    return 'Pokemon(name: $name, image: $image, imageDefault: $imageDefault, height: $height, weight: $weight, types: $types, stats: $stats, abilities: $abilities, species: $species)';
+    return 'Pokemon(name: $name, image: $image, imageDefault: $imageDefault, height: $height, weight: $weight, types: $types, stats: $stats, abilities: $abilities, moves: $moves, species: $species)';
   }
 
   @override
@@ -272,6 +297,7 @@ class _$_Pokemon extends _Pokemon {
             const DeepCollectionEquality().equals(other._stats, _stats) &&
             const DeepCollectionEquality()
                 .equals(other._abilities, _abilities) &&
+            const DeepCollectionEquality().equals(other._moves, _moves) &&
             (identical(other.species, species) || other.species == species));
   }
 
@@ -286,6 +312,7 @@ class _$_Pokemon extends _Pokemon {
       const DeepCollectionEquality().hash(_types),
       const DeepCollectionEquality().hash(_stats),
       const DeepCollectionEquality().hash(_abilities),
+      const DeepCollectionEquality().hash(_moves),
       species);
 
   @JsonKey(ignore: true)
@@ -305,6 +332,7 @@ abstract class _Pokemon extends Pokemon {
       final List<String>? types,
       final List<Stats>? stats,
       final List<String>? abilities,
+      final List<String>? moves,
       final String? species}) = _$_Pokemon;
   const _Pokemon._() : super._();
 
@@ -324,6 +352,8 @@ abstract class _Pokemon extends Pokemon {
   List<Stats>? get stats;
   @override
   List<String>? get abilities;
+  @override
+  List<String>? get moves;
   @override
   String? get species;
   @override

@@ -10,7 +10,6 @@ class _TabContent extends StatelessWidget {
     required this.content,
     this.titleFlex = 1,
     this.contentFlex = 2,
-    super.key,
   });
 
   @override

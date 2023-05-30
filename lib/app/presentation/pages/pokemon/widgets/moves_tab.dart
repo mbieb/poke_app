@@ -13,20 +13,24 @@ class _MovesTab extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _TabContent(
-            title: i10n.species,
-            content: Text(item?.species?.capitalize() ?? ''),
-          ),
-          _TabContent(
-            title: i10n.height,
-            content: Text('${item?.height}'),
-          ),
-          _TabContent(
-            title: i10n.weight,
-            content: Text('${item?.weight}'),
-          ),
-          _TabContent(
-            title: i10n.ability,
-            content: Text('asdz'),
+            title: i10n.moves,
+            content: ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                padding: padding(all: 0),
+                itemCount: item?.moves?.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    contentPadding: EdgeInsets.zero,
+                    dense: true,
+                    iconColor: cColorGrey4,
+                    leading: const Icon(
+                      Icons.circle,
+                      size: 16,
+                    ),
+                    title: Text(item?.moves?[index] ?? ''),
+                  );
+                }),
           )
         ],
       ),
