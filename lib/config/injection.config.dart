@@ -16,7 +16,7 @@ import 'package:injectable/injectable.dart' as _i2;
 import 'package:logger/logger.dart' as _i5;
 
 import '../app/application/bloc/pokemon_bloc.dart' as _i10;
-import '../app/domain/failures/pokemon/i_pokemon_repository.dart' as _i8;
+import '../app/domain/pokemon/i_pokemon_repository.dart' as _i8;
 import '../app/infrastructure/api_helper/api_helper.dart' as _i6;
 import '../app/infrastructure/pokemon/pokemon_remote_data_source.dart' as _i7;
 import '../app/infrastructure/pokemon/pokemon_repository.dart' as _i9;

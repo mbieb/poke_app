@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poke_app/app/presentation/constants/text_style.dart';
 import 'package:poke_app/app/presentation/helpers/ui_helper.dart';
+import 'package:poke_app/app/domain/extension/string_extension.dart';
 
 class TypeWidget extends StatelessWidget {
   final String text;
@@ -15,8 +16,9 @@ class TypeWidget extends StatelessWidget {
       child: Padding(
         padding: padding(horizontal: 18, vertical: 4),
         child: Text(
-          text,
-          style: cTextPrimaryRegSM,
+          text.capitalize(),
+          style: cTextPrimaryRegXS,
+          textAlign: TextAlign.center,
         ),
       ),
     );

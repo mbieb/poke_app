@@ -12,13 +12,25 @@ const cColorGrey4 = Color(0xFF94A1B2);
 
 const cColorGreen = Color(0xFF2CB67D);
 
-const cColorGreenAccent = Color.fromARGB(255, 35, 202, 163);
-const cColorBlue = Colors.blue;
-const cColorAmber = Colors.amber;
-const cColorBrown = Colors.brown;
-const cColorOrange = Colors.orange;
-const cColorPurple = Colors.purple;
-const cColorPurpleAccent = Colors.purpleAccent;
+// colors by pokemon type
+const cColorNormal = Color(0xffBDBDBD);
+const cColorFire = Color(0xffFF8A65);
+const cColorWater = Color(0xff81D4FA);
+const cColorElectric = Color(0xffF8D030);
+const cColorGrass = Color.fromARGB(255, 69, 215, 186);
+const cColorIce = Color(0xff00BCD4);
+const cColorFighting = Color(0xff8BC34A);
+const cColorPoison = Color(0xff9C27B0);
+const cColorGround = Color(0xff795548);
+const cColorFlying = Color(0xff03A9F4);
+const cColorPhysic = Color(0xffE91E63);
+const cColorBug = Color(0xff78C850);
+const cColorRock = Color(0xff795548);
+const cColorGhost = Color(0xff673AB7);
+const cColorDragon = Color(0xff673AB7);
+const cColorDark = Color(0xff607D8B);
+const cColorSteel = Color(0xff607D8B);
+const cColorFairy = Color(0xffEE99AC);
 
 const cColorRed = MaterialColor(
   0xFFFF5630,

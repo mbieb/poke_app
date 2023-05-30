@@ -22,17 +22,35 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "ability": MessageLookupByLibrary.simpleMessage("ability"),
         "about": MessageLookupByLibrary.simpleMessage("About"),
+        "alertCancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "alertConfirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "alertFailed": MessageLookupByLibrary.simpleMessage("Failed"),
+        "alertLogout": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to log out?"),
         "alertNoConnection": MessageLookupByLibrary.simpleMessage(
             "No connection, please check your internet"),
+        "alertOk": MessageLookupByLibrary.simpleMessage("Ok"),
+        "alertQuit": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to quit the app?"),
         "alertTimeOut":
             MessageLookupByLibrary.simpleMessage("Request time out"),
         "alertWarning": MessageLookupByLibrary.simpleMessage("Warning"),
+        "attack": MessageLookupByLibrary.simpleMessage("Attack"),
         "baseStats": MessageLookupByLibrary.simpleMessage("Base Stats"),
+        "defense": MessageLookupByLibrary.simpleMessage("Defense"),
         "evolution": MessageLookupByLibrary.simpleMessage("Evolution"),
+        "height": MessageLookupByLibrary.simpleMessage("Height"),
+        "hp": MessageLookupByLibrary.simpleMessage("HP"),
         "moves": MessageLookupByLibrary.simpleMessage("Moves"),
+        "noData": MessageLookupByLibrary.simpleMessage("No Data"),
         "pokedex": MessageLookupByLibrary.simpleMessage("Pokedex"),
-        "pokemon": MessageLookupByLibrary.simpleMessage("Pokemon")
+        "pokemon": MessageLookupByLibrary.simpleMessage("Pokemon"),
+        "spAttack": MessageLookupByLibrary.simpleMessage("Sp. Atk"),
+        "spDef": MessageLookupByLibrary.simpleMessage("Sp. Def"),
+        "species": MessageLookupByLibrary.simpleMessage("Species"),
+        "weight": MessageLookupByLibrary.simpleMessage("Weight"),
+        "yes": MessageLookupByLibrary.simpleMessage("Yes")
       };
 }

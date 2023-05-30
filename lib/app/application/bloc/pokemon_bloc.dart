@@ -5,8 +5,8 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:poke_app/app/domain/failures/failures.dart';
-import 'package:poke_app/app/domain/failures/pokemon/i_pokemon_repository.dart';
-import 'package:poke_app/app/domain/failures/pokemon/pokemon.dart';
+import 'package:poke_app/app/domain/pokemon/i_pokemon_repository.dart';
+import 'package:poke_app/app/domain/pokemon/pokemon.dart';
 
 part 'pokemon_event.dart';
 part 'pokemon_state.dart';

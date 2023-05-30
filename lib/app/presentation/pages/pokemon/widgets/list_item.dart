@@ -24,6 +24,7 @@ class _ListItem extends StatelessWidget {
       refreshController.loadComplete();
     }
 
+    I10n i10n = I10n.of(context);
     return SmartRefresher(
       enablePullDown: true,
       enablePullUp: !isLastPage,
@@ -32,7 +33,7 @@ class _ListItem extends StatelessWidget {
       onLoading: onLoading,
       footer: const CustomFooterRefresher(),
       child: items.isEmpty
-          ? const Center(child: Text('No Result'))
+          ? Center(child: Text(i10n.noData))
           : GridView.builder(
               shrinkWrap: true,
               physics: const ScrollPhysics(),
@@ -48,14 +49,21 @@ class _ListItem extends StatelessWidget {
                 var pokemon = items[index];
                 return GestureDetector(
                   onTap: () {
-                    context.push(AppRouter.pokemonDetailPage);
+                    context.push(AppRouter.pokemonDetailPage,
+                        extra: PokemonDetail(
+                          pokemon: pokemon,
+                          number: index + 1,
+                          color: getColorFromType(
+                              pokemon.types?[0].toLowerCase() ?? ''),
+                        ));
                   },
                   child: Padding(
                     padding: padding(all: 4),
                     child: Container(
-                      decoration: const BoxDecoration(
-                        color: cColorRed40,
-                        borderRadius: BorderRadius.all(
+                      decoration: BoxDecoration(
+                        color: getColorFromType(
+                            pokemon.types?[0].toLowerCase() ?? ''),
+                        borderRadius: const BorderRadius.all(
                           Radius.circular(16),
                         ),
                       ),
@@ -64,30 +72,70 @@ class _ListItem extends StatelessWidget {
                           Positioned(
                             bottom: -10,
                             right: -10,
-                            child: Image.asset(
-                              cImagePokeBall,
-                              height: 100,
-                              fit: BoxFit.cover,
+                            child: Opacity(
+                              opacity: 0.5,
+                              child: Image.asset(
+                                cImagePokeBall,
+                                width: 85,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                           Positioned(
-                              bottom: 0,
-                              right: 0,
-                              child: CachedNetworkImage(
-                                imageUrl: pokemon.image ?? "",
-                                fit: BoxFit.cover,
-                              )),
-                          const Positioned(
-                            top: 40,
-                            left: 15,
-                            child: TypeWidget('Fire'),
+                            bottom: 6,
+                            right: -4,
+                            child: CachedNetworkImage(
+                              width: 100,
+                              imageUrl: pokemon.image ?? "",
+                              fit: BoxFit.cover,
+                              errorWidget: (context, url, error) {
+                                return CachedNetworkImage(
+                                    width: 100,
+                                    imageUrl: pokemon.imageDefault ?? "",
+                                    fit: BoxFit.cover,
+                                    errorWidget: (context, url, error) =>
+                                        Container());
+                              },
+                            ),
                           ),
                           Positioned(
+                              top: 30,
+                              left: 15,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    pokemon.name?.capitalize() ?? "",
+                                    style: cTextPrimaryBold,
+                                  ),
+                                  gapH8,
+                                  SizedBox(
+                                    width: 82,
+                                    child: ListView.builder(
+                                        shrinkWrap: true,
+                                        physics:
+                                            const NeverScrollableScrollPhysics(),
+                                        itemCount: pokemon.types?.length,
+                                        itemBuilder: (context, index) {
+                                          var types = pokemon.types?[index];
+                                          return Container(
+                                            margin: margin(bottom: 8),
+                                            child: TypeWidget(types ?? ""),
+                                          );
+                                        }),
+                                  ),
+                                ],
+                              )),
+                          Positioned(
                             top: 10,
-                            left: 15,
-                            child: Text(
-                              pokemon.name ?? "",
-                              style: cTextPrimaryBold,
+                            right: 10,
+                            child: Opacity(
+                              opacity: 0.5,
+                              child: Text(
+                                customNumberFormat(index + 1),
+                                style: cTextAccentBold,
+                              ),
                             ),
                           ),
                         ],

@@ -90,6 +90,66 @@ class I10n {
     );
   }
 
+  /// `Confirm`
+  String get alertConfirm {
+    return Intl.message(
+      'Confirm',
+      name: 'alertConfirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get alertCancel {
+    return Intl.message(
+      'Cancel',
+      name: 'alertCancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ok`
+  String get alertOk {
+    return Intl.message(
+      'Ok',
+      name: 'alertOk',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to log out?`
+  String get alertLogout {
+    return Intl.message(
+      'Are you sure you want to log out?',
+      name: 'alertLogout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to quit the app?`
+  String get alertQuit {
+    return Intl.message(
+      'Are you sure you want to quit the app?',
+      name: 'alertQuit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get yes {
+    return Intl.message(
+      'Yes',
+      name: 'yes',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `About`
   String get about {
     return Intl.message(
@@ -145,6 +205,106 @@ class I10n {
     return Intl.message(
       'Pokedex',
       name: 'pokedex',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Data`
+  String get noData {
+    return Intl.message(
+      'No Data',
+      name: 'noData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Species`
+  String get species {
+    return Intl.message(
+      'Species',
+      name: 'species',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Height`
+  String get height {
+    return Intl.message(
+      'Height',
+      name: 'height',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weight`
+  String get weight {
+    return Intl.message(
+      'Weight',
+      name: 'weight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ability`
+  String get ability {
+    return Intl.message(
+      'ability',
+      name: 'ability',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `HP`
+  String get hp {
+    return Intl.message(
+      'HP',
+      name: 'hp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attack`
+  String get attack {
+    return Intl.message(
+      'Attack',
+      name: 'attack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Defense`
+  String get defense {
+    return Intl.message(
+      'Defense',
+      name: 'defense',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sp. Atk`
+  String get spAttack {
+    return Intl.message(
+      'Sp. Atk',
+      name: 'spAttack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sp. Def`
+  String get spDef {
+    return Intl.message(
+      'Sp. Def',
+      name: 'spDef',
       desc: '',
       args: [],
     );
