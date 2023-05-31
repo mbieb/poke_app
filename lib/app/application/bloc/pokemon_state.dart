@@ -23,7 +23,10 @@ class PokemonState with _$PokemonState {
         isLoading: false,
       );
 
-  PokemonState get loading => unmodified.copyWith(isLoading: true);
+  PokemonState get loading => unmodified.copyWith(
+        isLoading: true,
+        failureOrSuccessOption: none(),
+      );
   //value
   List<Pokemon> get pokemonList =>
       listOfPokemonOption.fold(() => [], (val) => val);
