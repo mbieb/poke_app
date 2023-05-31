@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
-      title: 'Base Flutter App',
+      title: 'Poke App',
       theme: cThemeLight,
       localizationsDelegates: const [
         I10n.delegate,
